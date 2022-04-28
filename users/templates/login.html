@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Welcome to the Library</h1>
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type='submit' value='Login'>
+     </form>
+
+    <span class="helpText">
+        Don't have an account yet?
+        <a href="{% url 'register' %}">Sign up Here!</a>
+    </span>
+
+{% endblock content %}
